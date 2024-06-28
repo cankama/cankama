@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Results</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('arya.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
+
+  .header {
+    background-image: url('anoof.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    position: relative;
+  }
+
+  .header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+
+  .header-content h1 {
+    margin: 0;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  #eventDropdown {
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
+    color: #000; /* Dropdown text color */
+    background-color: #fff; /* Dropdown background color */
+  }
+
+  #getResultBtn {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #getResultBtn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .event-link {
+    display: block;
+    margin-top: 10px;
+    color: #4CAF50; /* Link color */
+    text-decoration: none;
+  }
+
+  .event-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px;
+      max-width: 100%;
+      border-radius: 0;
+    }
+
+    .header {
+      height: 200px;
+    }
+
+    .header-content h1 {
+      font-size: 36px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-overlay"></div>
+  <div class="header-content">
+    <h1></h1>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Select Event</h2>
+  <div class="dropdown">
+    <select id="eventDropdown">
+      <option value="" selected disabled>Select Event</option>
+      <option value="event1">Event 1</option>
+      <option value="event2">Event 2</option>
+      <option value="event3">Event 3</option>
+      <!-- Add more events as needed -->
+    </select>
+    <button id="getResultBtn">Get Results</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('getResultBtn').addEventListener('click', function() {
+    var selectedEvent = document.getElementById('eventDropdown').value;
+    if (selectedEvent) {
+      // Replace with actual logic to redirect or show results for the selected event
+      switch (selectedEvent) {
+        case 'event1':
+          window.location.href = 'https://drive.google.com/event1-results-link';
+          break;
+        case 'event2':
+          window.location.href = 'https://drive.google.com/event2-results-link';
+          break;
+        case 'event3':
+          window.location.href = 'https://drive.google.com/event3-results-link';
+          break;
+        default:
+          alert('Please select an event');
+      }
+    } else {
+      alert('Please select an event');
+    }
+  });
+</script>
+</body>
+</html>
